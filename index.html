@@ -1,201 +1,243 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baladev Krishnan K | Portfolio</title>
-
-  <style>
+  <title>Baladev Krishnan K | Portfolio</title>  <style>
     :root {
-      --primary: #0f172a;
-      --accent: #2563eb;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #020617;
-      --muted: #64748b;
+      --bg: #0f172a;
+      --card: #020617;
+      --primary: #38bdf8;
+      --secondary: #22c55e;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #6366f1;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
-      background: var(--bg);
+      background: radial-gradient(circle at top, #020617, var(--bg));
       color: var(--text);
-      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
+    /* ====== ANIMATED BACKGROUND ====== */
+    .bg-glow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: var(--accent);
+      filter: blur(120px);
+      opacity: 0.35;
+      animation: float 12s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+
+    .bg-glow.one { top: 10%; left: 5%; }
+    .bg-glow.two { bottom: 10%; right: 5%; animation-delay: 3s; background: var(--secondary); }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-60px); }
+    }
+
+    /* ====== HEADER ====== */
     header {
-      background: linear-gradient(135deg, var(--primary), #020617);
-      color: white;
-      padding: 3.5rem 1.5rem;
       text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      animation: fadeDown 1.2s ease forwards;
     }
 
     header h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.8rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     header p {
+      margin-top: 0.75rem;
+      color: var(--muted);
       font-size: 1.1rem;
-      color: #cbd5f5;
     }
 
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== LAYOUT ====== */
     main {
       max-width: 1100px;
       margin: auto;
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.5rem 4rem;
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
     }
 
     section {
-      background: var(--card);
+      background: linear-gradient(145deg, #020617, #020617cc);
+      border: 1px solid #1e293b;
+      border-radius: 16px;
       padding: 2rem;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(56,189,248,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    section:hover::before { opacity: 1; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
+      font-size: 1.4rem;
       margin-bottom: 1rem;
       color: var(--primary);
-      font-size: 1.4rem;
     }
 
+    p, li {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ====== SKILLS ====== */
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      gap: 0.75rem;
     }
 
     .skill {
-      background: #e0e7ff;
-      padding: 0.4rem 0.9rem;
+      padding: 0.45rem 0.9rem;
       border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1e293b;
       font-size: 0.9rem;
-      color: #1e3a8a;
-      font-weight: 500;
+      transition: transform 0.3s, border 0.3s;
     }
 
-    ul {
-      padding-left: 1.2rem;
+    .skill:hover {
+      transform: scale(1.08);
+      border-color: var(--primary);
     }
 
-    ul li {
-      margin-bottom: 0.6rem;
-    }
-
+    /* ====== PROJECTS ====== */
     .projects {
       display: grid;
+      grid-template-columns: 1fr;
       gap: 1.5rem;
     }
 
     .project {
-      border-left: 4px solid var(--accent);
-      padding-left: 1rem;
+      padding: 1.25rem;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid #1e293b;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (min-width: 768px) {
+      main { grid-template-columns: 2fr 1fr; }
+      .projects { grid-template-columns: repeat(2, 1fr); }
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1.5rem;
       color: var(--muted);
       font-size: 0.9rem;
     }
 
-    @media (min-width: 768px) {
-      main {
-        grid-template-columns: 2fr 1fr;
-      }
+    footer span { color: var(--primary); }
+  </style></head>
+<body>  <div class="bg-glow one"></div>
+  <div class="bg-glow two"></div>  <header>
+    <h1>Baladev Krishnan K</h1>
+    <p>Business Analyst • Management Trainee Aspirant • Tech-Driven Thinker</p>
+  </header>  <main>
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Computer Science Engineering undergraduate at Bannari Amman Institute of Technology with a strong focus on Business Analysis, Management, and data-driven problem solving. Skilled at converting ambiguity into structured requirements, analyzing data using SQL and Python, and communicating insights clearly for business decisions.
+      </p>
+    </section><section>
+  <h2>ENTP-Aligned Strengths</h2>
+  <ul style="padding-left:1.2rem;">
+    <li><strong>Systems Thinking:</strong> Naturally sees end-to-end processes and business models.</li>
+    <li><strong>Problem Framing:</strong> Transforms vague ideas into structured workflows.</li>
+    <li><strong>Communication:</strong> Bridges technical and business teams effectively.</li>
+    <li><strong>Adaptability:</strong> Learns fast, thrives in ambiguity and change.</li>
+    <li><strong>Innovation:</strong> Constantly identifies optimization opportunities.</li>
+  </ul>
+</section>
 
-      .projects {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
-</head>
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span class="skill">Business Analysis</span>
+    <span class="skill">Requirements Gathering</span>
+    <span class="skill">Process Mapping</span>
+    <span class="skill">SQL</span>
+    <span class="skill">Python (Data Analysis)</span>
+    <span class="skill">Excel / Google Sheets</span>
+    <span class="skill">Power BI (Basics)</span>
+    <span class="skill">Stakeholder Communication</span>
+  </div>
+</section>
 
-<body>
-
-<header>
-  <h1>Baladev Krishnan K</h1>
-  <p>Business Analyst | Management Trainee Aspirant | Tech-Driven Thinker</p>
-</header>
-
-<main>
-
-  <section>
-    <h2>Profile</h2>
-    <p>
-      Computer Science Engineering undergraduate at Bannari Amman Institute of Technology
-      with a strong interest in Business Analysis, Management, and data-driven decision-making.
-      Skilled in translating ambiguous problems into structured requirements, analyzing data
-      using SQL and Python, and communicating insights effectively to stakeholders.
-    </p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill">Business Analysis</span>
-      <span class="skill">Requirements Gathering</span>
-      <span class="skill">Process Mapping (AS-IS / TO-BE)</span>
-      <span class="skill">SQL</span>
-      <span class="skill">Python (Data Analysis)</span>
-      <span class="skill">Excel / Google Sheets</span>
-      <span class="skill">Power BI (Basics)</span>
-      <span class="skill">Stakeholder Communication</span>
+<section>
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Business Process Analysis</h3>
+      <p>Analyzed AS-IS workflows, identified inefficiencies, and proposed TO-BE optimized processes with KPIs.</p>
     </div>
-  </section>
-
-  <section>
-    <h2>ENTP-Aligned Strengths</h2>
-    <ul>
-      <li><strong>Big-Picture Thinking:</strong> Understands systems and business flows end-to-end.</li>
-      <li><strong>Problem Framing:</strong> Converts vague ideas into structured, solvable problems.</li>
-      <li><strong>Communication:</strong> Explains technical insights in business language.</li>
-      <li><strong>Adaptability:</strong> Learns tools and domains rapidly.</li>
-      <li><strong>Ideation:</strong> Naturally identifies optimization and improvement opportunities.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Business Process Analysis (Academic)</h3>
-        <p>
-          Analyzed an existing workflow, identified inefficiencies,
-          and proposed an optimized TO-BE process using structured BA techniques.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>SQL & Data Analysis Mini Projects</h3>
-        <p>
-          Hands-on SQL and Python projects involving querying,
-          data cleaning, and basic analytics through IBM and Coursera programs.
-        </p>
-      </div>
+    <div class="project">
+      <h3>SQL & Data Analysis Projects</h3>
+      <p>Hands-on analysis using SQL and Python through IBM and Coursera certifications.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: baladevkrishnan.k@gmail.com</p>
-    <p>Phone: 979014505</p>
-    <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
-  </section>
+<section>
+  <h2>Contact</h2>
+  <p>Email: baladevkrishnan.k@gmail.com</p>
+  <p>Phone: 979014505</p>
+  <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
+</section>
 
-</main>
-
-<footer>
-  © 2025 Baladev Krishnan K · Built with GitHub Pages
-</footer>
-
-</body>
+  </main>  <footer>
+    <p>© 2025 <span>Baladev Krishnan K</span></p>
+    <p style="margin-top:0.6rem;">Live on GitHub Pages • baladev-krishnan-k.github.io</p>
+  </footer></body>
 </html>
