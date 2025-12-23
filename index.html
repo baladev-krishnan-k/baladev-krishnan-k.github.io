@@ -15,56 +15,207 @@
   </script>
 
   <style>
+    /* ================= TECH / BROWSER THEME ================= */
     :root {
-      --bg: #f9fafb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #4f46e5;
-      --border: #e5e7eb;
-    }
-
-    body.dark {
-      --bg: #020617;
-      --card: #020617;
+      --bg: #0b1020;
+      --card: #0f172a;
       --text: #e5e7eb;
-      --muted: #94a3b8;
+      --muted: #9ca3af;
       --primary: #38bdf8;
+      --accent: #22c55e;
       --border: #1e293b;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); transition: 0.4s; cursor: none; }
 
-    .cursor { width:18px;height:18px;border:2px solid var(--primary);border-radius:50%;position:fixed;pointer-events:none;transform:translate(-50%,-50%);z-index:9999;transition:0.15s; }
-    .cursor.active { transform:translate(-50%,-50%) scale(1.8); background:rgba(79,70,229,0.15); }
+    body {
+      background: radial-gradient(circle at top, #020617, var(--bg));
+      color: var(--text);
+      transition: 0.4s;
+      cursor: none;
+      text-align: center;
+    }
 
-    header { position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:10; }
-    nav { max-width:1100px;margin:auto;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center; }
-    nav h1 { color:var(--primary); }
-    nav ul { list-style:none;display:flex;gap:1.5rem;align-items:center; }
-    nav a { text-decoration:none;color:var(--text); }
+    /* ================= CUSTOM CURSOR ================= */
+    .cursor {
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      transition: 0.15s ease;
+    }
 
-    .toggle { border:1px solid var(--border);padding:0.4rem 0.7rem;border-radius:6px;cursor:pointer;font-size:0.85rem; }
+    .cursor.active {
+      transform: translate(-50%, -50%) scale(1.8);
+      background: rgba(56,189,248,0.15);
+    }
 
-    section { max-width:1100px;margin:auto;padding:5rem 1.5rem;opacity:0;transform:translateY(40px);transition:0.8s ease; }
-    section.show { opacity:1;transform:translateY(0); }
+    /* ================= HEADER ================= */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(2,6,23,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
 
-    #hero { min-height:90vh;display:flex;flex-direction:column;justify-content:center; }
-    #hero h2 { font-size:3rem;margin-bottom:1rem; }
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
 
-    .typing { color:var(--primary);border-right:2px solid;white-space:nowrap;overflow:hidden; }
+    nav h1 {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
 
-    .btn { margin-top:1.5rem;display:inline-block;padding:0.7rem 1.4rem;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-weight:500; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
 
-    .projects { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem; }
-    .project { background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:0.4s; }
-    .project:hover { transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.15); }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
 
-    footer { text-align:center;padding:3rem 1rem;color:var(--muted);border-top:1px solid var(--border); }
+    nav a:hover { color: var(--primary); }
 
-    @media(max-width:768px){ body{cursor:default;} .cursor{display:none;} #hero h2{font-size:2.2rem;} }
+    /* ================= SECTIONS ================= */
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 6rem 1.5rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.9s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0.5rem auto;
+    }
+
+    /* ================= HERO ================= */
+    #hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #hero h2 {
+      font-size: 3.2rem;
+    }
+
+    .typing {
+      color: var(--accent);
+      border-right: 2px solid var(--accent);
+      padding-right: 6px;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.75rem 1.6rem;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: #020617;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover { transform: translateY(-4px); }
+
+    /* ================= SKILLS ================= */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .skill {
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.7);
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+
+    /* ================= PROJECTS ================= */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .project {
+      background: rgba(15,23,42,0.8);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+
+    footer {
+      padding: 4rem 1rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      body { cursor: default; }
+      .cursor { display: none; }
+      #hero h2 { font-size: 2.3rem; }
+    }
   </style>
 </head>
 <body>
@@ -73,33 +224,56 @@
 
 <header>
   <nav>
-    <h1>Baladev</h1>
+    <h1>Baladev Krishnan K</h1>
     <ul>
       <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><div class="toggle" id="themeToggle">Dark</div></li>
     </ul>
   </nav>
 </header>
 
 <section id="hero">
   <h2>Hi, I'm <span class="typing" id="typing"></span></h2>
-  <p>Business Analyst • Management Trainee • Tech-Driven Thinker</p>
-  <a href="resume.pdf" class="btn" download>Download Resume</a>
+  <p>Business Analyst • Management Trainee • Tech-Oriented Thinker</p>
+  <a href="R
+    esume.pdf" class="btn" download>Download Resume</a>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Computer Science Engineering undergraduate at Bannari Amman Institute of Technology with a strong interest in Business Analysis and management roles. I enjoy working like a system—observing inputs, optimizing processes, and producing measurable outcomes.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills & Strengths</h2>
+  <div class="skills">
+    <div class="skill">Business Analysis</div>
+    <div class="skill">Requirements Gathering</div>
+    <div class="skill">Process Mapping</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Python (Analytics)</div>
+    <div class="skill">Excel / Sheets</div>
+    <div class="skill">Systems Thinking</div>
+    <div class="skill">Stakeholder Communication</div>
+  </div>
 </section>
 
 <section id="projects">
-  <h2>Case Studies</h2>
+  <h2>Projects</h2>
   <div class="projects">
-    <a href="case-study-1.html" class="project">
+    <div class="project">
       <h3>Business Process Optimization</h3>
-      <p>End-to-end AS-IS → TO-BE redesign with KPIs.</p>
-    </a>
-    <a href="case-study-2.html" class="project">
-      <h3>SQL & Data Analysis</h3>
-      <p>Insights generation using real datasets.</p>
-    </a>
+      <p>Analyzed AS-IS workflows and designed TO-BE processes with KPIs.</p>
+    </div>
+    <div class="project">
+      <h3>SQL & Data Analysis Practice</h3>
+      <p>Hands-on querying, insights, and reporting using structured datasets.</p>
+    </div>
   </div>
 </section>
 
@@ -114,7 +288,7 @@
 </footer>
 
 <script>
-  /* Scroll animation */
+  /* Scroll reveal */
   const sections=document.querySelectorAll('section');
   const observer=new IntersectionObserver(e=>{e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'));},{threshold:0.15});
   sections.forEach(s=>observer.observe(s));
@@ -122,28 +296,18 @@
   /* Cursor */
   const cursor=document.querySelector('.cursor');
   document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
-  document.querySelectorAll('a,.project,.toggle').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('active'));el.addEventListener('mouseleave',()=>cursor.classList.remove('active'));});
-
-  /* Theme toggle */
-  const toggle=document.getElementById('themeToggle');
-  toggle.onclick=()=>{document.body.classList.toggle('dark');toggle.textContent=document.body.classList.contains('dark')?'Light':'Dark';};
+  document.querySelectorAll('a,.project,.skill,.btn').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('active'));el.addEventListener('mouseleave',()=>cursor.classList.remove('active'));});
 
   /* Typing animation */
   const roles=['Baladev Krishnan K','Business Analyst','Management Trainee','Systems Thinker'];
-  let roleIndex=0,charIndex=0,typing=true;
-  const typingEl=document.getElementById('typing');
-
-  function typeLoop(){
-    if(typing){
-      typingEl.textContent=roles[roleIndex].slice(0,++charIndex);
-      if(charIndex===roles[roleIndex].length){typing=false;setTimeout(typeLoop,1200);return;}
-    } else {
-      typingEl.textContent=roles[roleIndex].slice(0,--charIndex);
-      if(charIndex===0){typing=true;roleIndex=(roleIndex+1)%roles.length;}
-    }
-    setTimeout(typeLoop,typing?120:60);
+  let r=0,c=0,typing=true;
+  const el=document.getElementById('typing');
+  function loop(){
+    if(typing){ el.textContent=roles[r].slice(0,++c); if(c===roles[r].length){typing=false;setTimeout(loop,1200);return;} }
+    else { el.textContent=roles[r].slice(0,--c); if(c===0){typing=true;r=(r+1)%roles.length;} }
+    setTimeout(loop,typing?120:60);
   }
-  typeLoop();
+  loop();
 </script>
 
 </body>
