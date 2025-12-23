@@ -1,193 +1,201 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Profile</title>
+  <title>Baladev Krishnan K | Portfolio</title>
+
   <style>
     :root {
-      --primary: #1f2933;
-      --secondary: #3b82f6;
-      --bg: #f9fafb;
-      --text: #111827;
-      --muted: #6b7280;
-    }* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #020617;
+      --muted: #64748b;
+    }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
 
-header {
-  background: var(--primary);
-  color: white;
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
-}
+    header {
+      background: linear-gradient(135deg, var(--primary), #020617);
+      color: white;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
 
-header p {
-  font-size: 1.1rem;
-  color: #d1d5db;
-}
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
 
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
+    header p {
+      font-size: 1.1rem;
+      color: #cbd5f5;
+    }
 
-section {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
 
-h2 {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  color: var(--primary);
-}
+    section {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+      font-size: 1.4rem;
+    }
 
-.skill {
-  background: #e5e7eb;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-}
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
 
-.projects {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
+    .skill {
+      background: #e0e7ff;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+      font-weight: 500;
+    }
 
-.project {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 1.25rem;
-}
+    ul {
+      padding-left: 1.2rem;
+    }
 
-.project h3 {
-  margin-bottom: 0.5rem;
-}
+    ul li {
+      margin-bottom: 0.6rem;
+    }
 
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+    }
 
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: 2fr 1fr;
-  }
+    .project {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+    }
 
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
 
+    @media (min-width: 768px) {
+      main {
+        grid-template-columns: 2fr 1fr;
+      }
+
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Baladev Krishnan K</h1>
-    <p>Business Analyst | Management Trainee Aspirant | Tech‑Driven Problem Solver</p>
-  </header>  <main>
-    <section>
-      <h2>Profile</h2>
-      <p>
-        Computer Science Engineering undergraduate at Bannari Amman Institute of Technology with a strong inclination towards Business Analysis, Management, and data-driven decision making. Experienced in translating business problems into structured requirements, analyzing data using SQL and Python, and communicating insights clearly to stakeholders. Actively preparing for Business Analyst and Management Trainee roles while building a foundation for analytics freelancing.
-      </p>
-    </section><section>
-  <h2>ENTP-Aligned Strengths</h2>
-  <ul style="padding-left:1.2rem;">
-    <li><strong>Big-Picture Thinking:</strong> Quickly understands systems, business models, and end-to-end processes rather than isolated tasks.</li>
-    <li><strong>Problem Framing:</strong> Strong at converting vague or unstructured problems into clear requirements and logical workflows.</li>
-    <li><strong>Communication & Influence:</strong> Able to explain technical insights in business-friendly language for stakeholders.</li>
-    <li><strong>Adaptability:</strong> Learns tools, domains, and industries rapidly; comfortable with ambiguity and change.</li>
-    <li><strong>Ideation & Improvement:</strong> Naturally identifies optimization opportunities and alternative approaches in processes.</li>
-  </ul>
-</section>
 
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <span class="skill">Business Analysis</span>
-    <span class="skill">Requirements Gathering</span>
-    <span class="skill">Process Mapping (AS‑IS / TO‑BE)</span>
-    <span class="skill">SQL</span>
-    <span class="skill">Python (Data Analysis)</span>
-    <span class="skill">Excel / Google Sheets</span>
-    <span class="skill">Power BI (Basics)</span>
-    <span class="skill">Stakeholder Communication</span>
-  </div>
-</section>
+<header>
+  <h1>Baladev Krishnan K</h1>
+  <p>Business Analyst | Management Trainee Aspirant | Tech-Driven Thinker</p>
+</header>
 
-<section>
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project">
-      <h3>Business Process Analysis – Academic Project</h3>
-      <p>
-        Analyzed an existing workflow, identified inefficiencies, and proposed an optimized TO‑BE process using structured business analysis techniques. Focused on requirement clarity, KPI identification, and logical sequencing of activities.
-      </p>
-    </div>
-    <div class="project">
-      <h3>SQL & Data Analysis Mini Projects</h3>
-      <p>
-        Worked on hands‑on SQL and Python exercises involving data cleaning, querying, and basic analysis as part of IBM and Coursera Project Network certifications.
-      </p>
-    </div>
-  </div>
-    <div class="project">
-      <h3>Project Title</h3>
-      <p>
-        Short description of the project, your role, technologies used, and
-        measurable outcomes or impact.
-      </p>
-    </div>
-  </div>
-</section>
+<main>
 
-<section>
-  <h2>Contact</h2>
-  <p>Email: baladevkrishnan.k@gmail.com</p>
-  <p>Phone: 979014505</p>
-  <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
-</section>
-
-  </main>  <footer>
-    <p>© 2025 Baladev Krishnan K. All rights reserved.</p>
-    <p style="margin-top:0.5rem;">
-      <strong>Make this live (GitHub Pages):</strong><br>
-      1. Create a GitHub repository named <code>baladevkrishnan.github.io</code><br>
-      2. Upload this <code>index.html</code> file to the repository root<br>
-      3. Go to <em>Settings → Pages</em><br>
-      4. Select <em>Deploy from branch</em> → <em>main</em> → <em>/root</em><br>
-      5. Your site will be live at <code>https://baladevkrishnan.github.io</code>
+  <section>
+    <h2>Profile</h2>
+    <p>
+      Computer Science Engineering undergraduate at Bannari Amman Institute of Technology
+      with a strong interest in Business Analysis, Management, and data-driven decision-making.
+      Skilled in translating ambiguous problems into structured requirements, analyzing data
+      using SQL and Python, and communicating insights effectively to stakeholders.
     </p>
-  </footer>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">Business Analysis</span>
+      <span class="skill">Requirements Gathering</span>
+      <span class="skill">Process Mapping (AS-IS / TO-BE)</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Python (Data Analysis)</span>
+      <span class="skill">Excel / Google Sheets</span>
+      <span class="skill">Power BI (Basics)</span>
+      <span class="skill">Stakeholder Communication</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>ENTP-Aligned Strengths</h2>
+    <ul>
+      <li><strong>Big-Picture Thinking:</strong> Understands systems and business flows end-to-end.</li>
+      <li><strong>Problem Framing:</strong> Converts vague ideas into structured, solvable problems.</li>
+      <li><strong>Communication:</strong> Explains technical insights in business language.</li>
+      <li><strong>Adaptability:</strong> Learns tools and domains rapidly.</li>
+      <li><strong>Ideation:</strong> Naturally identifies optimization and improvement opportunities.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Business Process Analysis (Academic)</h3>
+        <p>
+          Analyzed an existing workflow, identified inefficiencies,
+          and proposed an optimized TO-BE process using structured BA techniques.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>SQL & Data Analysis Mini Projects</h3>
+        <p>
+          Hands-on SQL and Python projects involving querying,
+          data cleaning, and basic analytics through IBM and Coursera programs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: baladevkrishnan.k@gmail.com</p>
+    <p>Phone: 979014505</p>
+    <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 Baladev Krishnan K · Built with GitHub Pages
+</footer>
+
 </body>
 </html>
