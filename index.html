@@ -1,299 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baladev Krishnan K | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Baladev Krishnan K | Portfolio</title>
 
-  <!-- Google Analytics (replace G-XXXXXXX) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
+<style>
+/* =====================
+   RESET & VARIABLES
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <style>
-    /* ================= TECH / BROWSER THEME ================= */
-    :root {
-      --bg: #0b1020;
-      --card: #0f172a;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --primary: #38bdf8;
-      --accent: #22c55e;
-      --border: #1e293b;
-      --danger: #ef4444;
-      --warning: #f59e0b;
-      --success: #22c55e;
-    }
+:root {
+    --bg: #fafafa;
+    --text: #111;
+    --muted: #555;
+    --card: #ffffff;
+    --accent: #111;
+    --radius: 14px;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-    }
+/* =====================
+   GLOBAL
+===================== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
 
-    html { scroll-behavior: smooth; }
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
 
-    body {
-      background: radial-gradient(circle at top, #020617, var(--bg));
-      color: var(--text);
-      text-align: center;
-    }
+section {
+    margin: 96px 0;
+}
 
-    /* ================= FAKE BROWSER UI ================= */
-    .browser {
-      max-width: 1200px;
-      margin: 1.2rem auto 0;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--card);
-    }
+h1, h2, h3 {
+    font-weight: 600;
+}
 
-    .browser-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.7rem 1rem;
-      background: #020617;
-      border-bottom: 1px solid var(--border);
-    }
+p {
+    color: var(--muted);
+    margin-top: 12px;
+}
 
-    .dot { width: 12px; height: 12px; border-radius: 50%; }
-    .red { background: var(--danger); }
-    .yellow { background: var(--warning); }
-    .green { background: var(--success); }
+/* =====================
+   HERO
+===================== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
 
-    .address {
-      margin-left: 1rem;
-      padding: 0.3rem 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 24px;
+}
 
-    /* ================= TERMINAL INTRO ================= */
-    .terminal {
-      max-width: 900px;
-      margin: 3rem auto;
-      background: #020617;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: left;
-      color: #22c55e;
-      font-size: 0.9rem;
-    }
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+}
 
-    .terminal span { color: var(--text); }
+/* =====================
+   TRUST / LOGOS
+===================== */
+.logos {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
 
-    /* ================= SECTIONS ================= */
+.logo {
+    padding: 14px 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* =====================
+   CARDS
+===================== */
+.card {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+}
+
+/* =====================
+   SKILLS
+===================== */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.skill {
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* =====================
+   PROJECTS GRID
+===================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
     section {
-      max-width: 900px;
-      margin: auto;
-      padding: 5rem 1.5rem;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: 0.9s ease;
+        margin: 72px 0;
     }
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
+    .hero {
+        min-height: auto;
+        padding-top: 96px;
     }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.2rem;
-      color: var(--primary);
-    }
-
-    p {
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0.5rem auto;
-    }
-
-    /* ================= HERO ================= */
-    #hero {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #hero h2 { font-size: 3rem; }
-
-    .typing {
-      color: var(--accent);
-      border-right: 2px solid var(--accent);
-      padding-right: 6px;
-    }
-
-    .btn {
-      margin-top: 2rem;
-      display: inline-block;
-      padding: 0.75rem 1.6rem;
-      border-radius: 10px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      color: #020617;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    /* ================= SKILLS ================= */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.9rem;
-      margin-top: 2rem;
-    }
-
-    .skill {
-      padding: 0.6rem 1.1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: rgba(15,23,42,0.7);
-    }
-
-    /* ================= PROJECTS ================= */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
-
-    .project {
-      background: rgba(15,23,42,0.8);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.8rem;
-    }
-
-    footer {
-      padding: 4rem 1rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-
-    /* ================= MOBILE-FIRST RECRUITER TWEAKS ================= */
-    @media (max-width: 768px) {
-      #hero h2 { font-size: 2.2rem; }
-      section { padding: 3.5rem 1rem; }
-      .terminal { font-size: 0.8rem; }
-      .browser { margin-top: 0.6rem; }
-      .btn { width: 100%; max-width: 280px; }
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
 
-<div class="browser">
-  <div class="browser-bar">
-    <div class="dot red"></div>
-    <div class="dot yellow"></div>
-    <div class="dot green"></div>
-    <div class="address">https://baladev-krishnan-k.github.io</div>
-  </div>
+<!-- =====================
+     HERO
+===================== -->
+<main>
+<section class="hero">
+    <div>
+        <h1>
+            Hi, I’m <br />
+            Baladev Krishnan K
+        </h1>
+        <p>
+            Business Analyst & Management Trainee with a systems-thinking mindset.
+            I analyze problems, optimize processes, and translate business needs
+            into structured, data-driven solutions.
+        </p>
 
-  <div class="terminal" id="terminal"></div>
+        <div class="logos">
+            <div class="logo">Business Analysis</div>
+            <div class="logo">Process Mapping</div>
+            <div class="logo">Data & Analytics</div>
+            <div class="logo">Stakeholder Communication</div>
+        </div>
+    </div>
+</section>
 
-  <section id="hero">
-    <h2>Hi, I'm <span class="typing" id="typing"></span></h2>
-    <p>Business Analyst • Management Trainee • Tech-Oriented Thinker</p>
-    <a href="resume.pdf" class="btn" target="_blank" rel="noopener">View Resume</a>
-  </section>
+<!-- =====================
+     ABOUT
+===================== -->
+<section>
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+            I’m a Computer Science Engineering undergraduate with a strong interest
+            in business strategy and analytics. I treat organizations like systems —
+            understanding inputs, improving workflows, and enhancing outcomes
+            through structured thinking and data.
+        </p>
+    </div>
+</section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Computer Science Engineering undergraduate with a business-first mindset. I treat organizations like systems—analyzing inputs, optimizing processes, and improving outputs through structured thinking and data.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills & Strengths</h2>
+<!-- =====================
+     SKILLS
+===================== -->
+<section>
+    <h2>What I Do</h2>
     <div class="skills">
-      <div class="skill">Business Analysis</div>
-      <div class="skill">Process Mapping</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Python (Analytics)</div>
-      <div class="skill">Excel / Sheets</div>
-      <div class="skill">Systems Thinking</div>
-      <div class="skill">Stakeholder Communication</div>
+        <div class="skill">Business Analysis</div>
+        <div class="skill">Process Mapping</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Python (Analytics)</div>
+        <div class="skill">Excel / Google Sheets</div>
+        <div class="skill">Systems Thinking</div>
+        <div class="skill">Stakeholder Communication</div>
     </div>
-  </section>
+</section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Business Process Optimization</h3>
-        <p>AS-IS → TO-BE workflow redesign with KPI alignment.</p>
-      </div>
-      <div class="project">
-        <h3>SQL & Data Analysis Practice</h3>
-        <p>Hands-on querying and insight generation using structured datasets.</p>
-      </div>
+<!-- =====================
+     PROJECTS
+===================== -->
+<section>
+    <h2>Selected Work</h2>
+
+    <div class="projects-grid">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>
+                Designed and developed a clean, responsive personal portfolio using
+                semantic HTML5 and modern CSS. Focused on clarity, whitespace, and
+                professional visual hierarchy.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Sales Analysis</h3>
+            <p>
+                Analyzed sales datasets using Excel and Google Sheets to uncover trends,
+                performance gaps, and actionable insights for decision-making.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Process Improvement Study</h3>
+            <p>
+                Documented and optimized a business workflow using process mapping
+                techniques to reduce inefficiencies and improve clarity.
+            </p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: baladevkrishnan.k@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
-  </section>
+<!-- =====================
+     CONTACT
+===================== -->
+<section>
+    <div class="card">
+        <h2>Contact</h2>
+        <p>
+            Email: baladevkrishnan.k@gmail.com<br />
+            LinkedIn: linkedin.com/in/baladevkrishnan-k
+        </p>
+    </div>
+</section>
 
-  <footer>
-    <p>© 2025 Baladev Krishnan K • GitHub Pages</p>
-  </footer>
-</div>
+</main>
 
-<script>
-  /* Terminal intro */
-  const terminal = document.getElementById('terminal');
-  const lines = [
-    '> booting profile...',
-    '> loading skills...',
-    '> loading projects...',
-    '> ready.'
-  ];
-  let i = 0;
-  function typeTerminal() {
-    if (i < lines.length) {
-      terminal.innerHTML += lines[i] + '<br>';
-      i++;
-      setTimeout(typeTerminal, 700);
-    }
-  }
-  typeTerminal();
-
-  /* Scroll reveal */
-  const sections=document.querySelectorAll('section');
-  const observer=new IntersectionObserver(e=>{e.forEach(i=>i.isIntersecting&&i.target.classList.add('show'));},{threshold:0.15});
-  sections.forEach(s=>observer.observe(s));
-
-  /* Typing animation */
-  const roles=['Baladev Krishnan K','Business Analyst','Management Trainee','Systems Thinker'];
-  let r=0,c=0,typing=true;
-  const el=document.getElementById('typing');
-  function loop(){
-    if(typing){ el.textContent=roles[r].slice(0,++c); if(c===roles[r].length){typing=false;setTimeout(loop,1200);return;} }
-    else { el.textContent=roles[r].slice(0,--c); if(c===0){typing=true;r=(r+1)%roles.length;} }
-    setTimeout(loop,typing?120:60);
-  }
-  loop();
-</script>
+<!-- =====================
+     FOOTER
+===================== -->
+<footer>
+    © 2025 Baladev Krishnan K · Built with HTML & CSS · GitHub Pages
+</footer>
 
 </body>
 </html>
