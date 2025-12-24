@@ -16,12 +16,14 @@
 }
 
 :root {
-    --bg: #fafafa;
+    --bg: #f6f7fb;
+    --card: rgba(255,255,255,0.75);
     --text: #111;
     --muted: #555;
-    --card: #ffffff;
     --accent: #111;
-    --radius: 14px;
+    --border: rgba(0,0,0,0.08);
+    --radius: 16px;
+    --blur: blur(14px);
 }
 
 /* =====================
@@ -29,19 +31,19 @@
 ===================== */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background-color: var(--bg);
+    background: linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
     color: var(--text);
     line-height: 1.6;
 }
 
 main {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 24px;
 }
 
 section {
-    margin: 96px 0;
+    margin: 100px 0;
 }
 
 h1, h2, h3 {
@@ -51,6 +53,38 @@ h1, h2, h3 {
 p {
     color: var(--muted);
     margin-top: 12px;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: var(--blur);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-inner a {
+    text-decoration: none;
+    color: var(--muted);
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+.nav-inner a:hover {
+    color: var(--text);
 }
 
 /* =====================
@@ -68,42 +102,44 @@ p {
 }
 
 .hero p {
-    font-size: 1.1rem;
-    max-width: 700px;
+    font-size: 1.15rem;
+    max-width: 720px;
 }
 
 /* =====================
-   TRUST / LOGOS
+   TAGS
 ===================== */
-.logos {
+.tags {
     display: flex;
-    gap: 32px;
     flex-wrap: wrap;
+    gap: 12px;
     margin-top: 32px;
 }
 
-.logo {
-    padding: 14px 20px;
-    border: 1px solid #e5e5e5;
+.tag {
+    padding: 10px 18px;
     border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--border);
     font-size: 14px;
-    color: var(--muted);
 }
 
 /* =====================
    CARDS
 ===================== */
 .card {
-    background-color: var(--card);
+    background: var(--card);
+    backdrop-filter: var(--blur);
     border-radius: var(--radius);
-    padding: 32px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    padding: 36px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
 }
 
 /* =====================
@@ -119,25 +155,34 @@ p {
 .skill {
     padding: 10px 16px;
     border-radius: 999px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
+    background: #fff;
     font-size: 14px;
 }
 
 /* =====================
    PROJECTS GRID
 ===================== */
-.projects-grid {
+.projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
-    margin-top: 32px;
+    margin-top: 40px;
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact p {
+    margin-top: 8px;
+    font-size: 15px;
 }
 
 /* =====================
    FOOTER
 ===================== */
 footer {
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--border);
     padding: 48px 24px;
     text-align: center;
     color: var(--muted);
@@ -154,7 +199,11 @@ footer {
 
     .hero {
         min-height: auto;
-        padding-top: 96px;
+        padding-top: 120px;
+    }
+
+    .nav-inner a {
+        margin-left: 16px;
     }
 }
 </style>
@@ -162,50 +211,55 @@ footer {
 
 <body>
 
-<!-- =====================
-     HERO
-===================== -->
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-inner">
+        <strong>Baladev</strong>
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
 <main>
+
+<!-- HERO -->
 <section class="hero">
     <div>
-        <h1>
-            Hi, I’m <br />
-            Baladev Krishnan K
-        </h1>
+        <h1>Hi, I’m <br>Baladev Krishnan K</h1>
         <p>
             Business Analyst & Management Trainee with a systems-thinking mindset.
-            I analyze problems, optimize processes, and translate business needs
-            into structured, data-driven solutions.
+            I break down complex problems, improve workflows, and turn business needs
+            into structured, data-driven decisions.
         </p>
 
-        <div class="logos">
-            <div class="logo">Business Analysis</div>
-            <div class="logo">Process Mapping</div>
-            <div class="logo">Data & Analytics</div>
-            <div class="logo">Stakeholder Communication</div>
+        <div class="tags">
+            <div class="tag">Business Analysis</div>
+            <div class="tag">Process Mapping</div>
+            <div class="tag">Data & Analytics</div>
+            <div class="tag">Stakeholder Communication</div>
         </div>
     </div>
 </section>
 
-<!-- =====================
-     ABOUT
-===================== -->
-<section>
+<!-- ABOUT -->
+<section id="about">
     <div class="card">
         <h2>About Me</h2>
         <p>
-            I’m a Computer Science Engineering undergraduate with a strong interest
-            in business strategy and analytics. I treat organizations like systems —
-            understanding inputs, improving workflows, and enhancing outcomes
-            through structured thinking and data.
+            I’m a Computer Science Engineering undergraduate with a strong inclination
+            toward business strategy, analytics, and organizational problem-solving.
+            I view businesses as interconnected systems and focus on clarity,
+            efficiency, and measurable outcomes.
         </p>
     </div>
 </section>
 
-<!-- =====================
-     SKILLS
-===================== -->
-<section>
+<!-- SKILLS -->
+<section id="skills">
     <h2>What I Do</h2>
     <div class="skills">
         <div class="skill">Business Analysis</div>
@@ -218,61 +272,51 @@ footer {
     </div>
 </section>
 
-<!-- =====================
-     PROJECTS
-===================== -->
-<section>
+<!-- PROJECTS -->
+<section id="work">
     <h2>Selected Work</h2>
-
-    <div class="projects-grid">
+    <div class="projects">
         <div class="card">
-            <h3>Portfolio Website</h3>
+            <h3>Personal Portfolio</h3>
             <p>
-                Designed and developed a clean, responsive personal portfolio using
-                semantic HTML5 and modern CSS. Focused on clarity, whitespace, and
-                professional visual hierarchy.
+                Designed and built a responsive portfolio with semantic HTML and
+                modern CSS, emphasizing clarity, hierarchy, and professional presence.
             </p>
         </div>
 
         <div class="card">
-            <h3>Sales Analysis</h3>
+            <h3>Sales Data Analysis</h3>
             <p>
-                Analyzed sales datasets using Excel and Google Sheets to uncover trends,
-                performance gaps, and actionable insights for decision-making.
+                Performed exploratory analysis using Excel and Google Sheets to identify
+                trends, inefficiencies, and decision-support insights.
             </p>
         </div>
 
         <div class="card">
-            <h3>Process Improvement Study</h3>
+            <h3>Process Optimization Study</h3>
             <p>
-                Documented and optimized a business workflow using process mapping
-                techniques to reduce inefficiencies and improve clarity.
+                Mapped and improved a business workflow using structured process
+                documentation to reduce ambiguity and inefficiencies.
             </p>
         </div>
     </div>
 </section>
 
-<!-- =====================
-     CONTACT
-===================== -->
-<section>
-    <div class="card">
+<!-- CONTACT -->
+<section id="contact">
+    <div class="card contact">
         <h2>Contact</h2>
-        <p>
-            Email: baladevkrishnan.k@gmail.com<br />
-            LinkedIn: linkedin.com/in/baladevkrishnan-k
-        </p>
+        <p>Email: baladevkrishnan.k@gmail.com</p>
+        <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
     </div>
 </section>
 
 </main>
 
-<!-- =====================
-     FOOTER
-===================== -->
 <footer>
     © 2025 Baladev Krishnan K · Built with HTML & CSS · GitHub Pages
 </footer>
 
 </body>
 </html>
+
