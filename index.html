@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Baladev Krishnan K | Portfolio</title>
+
+<title>Baladev Krishnan K | Business Analyst & Management Trainee</title>
+
+<meta name="description" content="Baladev Krishnan K – Business Analyst & Management Trainee skilled in process mapping, data analytics, SQL, Python, and stakeholder communication." />
+<meta name="keywords" content="Business Analyst, Management Trainee, Process Mapping, SQL, Python, Data Analytics, Systems Thinking" />
+<meta name="author" content="Baladev Krishnan K" />
 
 <style>
 /* =====================
@@ -16,14 +21,22 @@
 }
 
 :root {
-    --bg: #f6f7fb;
-    --card: rgba(255,255,255,0.75);
+    --bg: #ffffff;
     --text: #111;
     --muted: #555;
-    --accent: #111;
+    --card: rgba(255,255,255,0.75);
     --border: rgba(0,0,0,0.08);
-    --radius: 16px;
-    --blur: blur(14px);
+    --accent: #111;
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+    --bg: #0f0f0f;
+    --text: #f5f5f5;
+    --muted: #aaa;
+    --card: rgba(25,25,25,0.75);
+    --border: rgba(255,255,255,0.12);
+    --accent: #fff;
 }
 
 /* =====================
@@ -31,9 +44,10 @@
 ===================== */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
+    transition: background 0.3s, color 0.3s;
 }
 
 main {
@@ -43,7 +57,7 @@ main {
 }
 
 section {
-    margin: 100px 0;
+    margin: 110px 0;
 }
 
 h1, h2, h3 {
@@ -52,43 +66,52 @@ h1, h2, h3 {
 
 p {
     color: var(--muted);
-    margin-top: 12px;
+    margin-top: 14px;
+    max-width: 760px;
 }
 
 /* =====================
    NAVBAR
 ===================== */
-nav {
+header {
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: var(--blur);
+    z-index: 20;
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
 }
 
-.nav-inner {
+.nav {
     max-width: 1100px;
     margin: auto;
-    padding: 16px 24px;
+    padding: 18px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav-inner a {
+.nav a {
     text-decoration: none;
     color: var(--muted);
     margin-left: 24px;
     font-size: 14px;
 }
 
-.nav-inner a:hover {
+.nav a:hover {
+    color: var(--text);
+}
+
+.toggle {
+    border: 1px solid var(--border);
+    background: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
     color: var(--text);
 }
 
 /* =====================
-   HERO
+   HERO (UXDesignerStockholm style)
 ===================== */
 .hero {
     min-height: 90vh;
@@ -97,29 +120,24 @@ nav {
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 24px;
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    letter-spacing: -0.02em;
 }
 
-.hero p {
-    font-size: 1.15rem;
-    max-width: 720px;
+.hero span {
+    color: var(--muted);
 }
 
-/* =====================
-   TAGS
-===================== */
 .tags {
     display: flex;
-    flex-wrap: wrap;
     gap: 12px;
+    flex-wrap: wrap;
     margin-top: 32px;
 }
 
 .tag {
     padding: 10px 18px;
     border-radius: 999px;
-    background: #fff;
     border: 1px solid var(--border);
     font-size: 14px;
 }
@@ -129,17 +147,10 @@ nav {
 ===================== */
 .card {
     background: var(--card);
-    backdrop-filter: var(--blur);
-    border-radius: var(--radius);
-    padding: 36px;
     border: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    border-radius: 18px;
+    padding: 40px;
+    backdrop-filter: blur(14px);
 }
 
 /* =====================
@@ -147,35 +158,40 @@ nav {
 ===================== */
 .skills {
     display: flex;
-    flex-wrap: wrap;
     gap: 12px;
-    margin-top: 24px;
+    flex-wrap: wrap;
+    margin-top: 28px;
 }
 
 .skill {
     padding: 10px 16px;
     border-radius: 999px;
     border: 1px solid var(--border);
-    background: #fff;
     font-size: 14px;
 }
 
 /* =====================
-   PROJECTS GRID
+   PROJECTS
 ===================== */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
-    margin-top: 40px;
+    margin-top: 48px;
 }
 
 /* =====================
-   CONTACT
+   SCROLL ANIMATION
 ===================== */
-.contact p {
-    margin-top: 8px;
-    font-size: 15px;
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* =====================
@@ -185,8 +201,8 @@ footer {
     border-top: 1px solid var(--border);
     padding: 48px 24px;
     text-align: center;
-    color: var(--muted);
     font-size: 14px;
+    color: var(--muted);
 }
 
 /* =====================
@@ -194,16 +210,7 @@ footer {
 ===================== */
 @media (max-width: 768px) {
     section {
-        margin: 72px 0;
-    }
-
-    .hero {
-        min-height: auto;
-        padding-top: 120px;
-    }
-
-    .nav-inner a {
-        margin-left: 16px;
+        margin: 80px 0;
     }
 }
 </style>
@@ -211,56 +218,53 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <div class="nav-inner">
+<header>
+    <nav class="nav">
         <strong>Baladev</strong>
         <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
+            <button class="toggle" onclick="toggleTheme()">🌓</button>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
 
 <main>
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero reveal">
     <div>
-        <h1>Hi, I’m <br>Baladev Krishnan K</h1>
+        <h1>
+            Baladev Krishnan K<br />
+            <span>Business Analyst & Management Trainee</span>
+        </h1>
+
         <p>
-            Business Analyst & Management Trainee with a systems-thinking mindset.
-            I break down complex problems, improve workflows, and turn business needs
-            into structured, data-driven decisions.
+            I help organizations understand problems clearly, improve processes,
+            and make data-driven decisions through structured business analysis
+            and systems thinking.
         </p>
 
         <div class="tags">
             <div class="tag">Business Analysis</div>
             <div class="tag">Process Mapping</div>
-            <div class="tag">Data & Analytics</div>
+            <div class="tag">Data Analytics</div>
             <div class="tag">Stakeholder Communication</div>
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-    <div class="card">
-        <h2>About Me</h2>
+<section class="reveal">
+    <article class="card">
+        <h2>About</h2>
         <p>
-            I’m a Computer Science Engineering undergraduate with a strong inclination
-            toward business strategy, analytics, and organizational problem-solving.
-            I view businesses as interconnected systems and focus on clarity,
-            efficiency, and measurable outcomes.
+            Computer Science Engineering undergraduate with strong interest in
+            business strategy, analytics, and organizational optimization.
+            Skilled in translating business needs into structured analytical
+            solutions.
         </p>
-    </div>
+    </article>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2>What I Do</h2>
+<section class="reveal">
+    <h2>Skills</h2>
     <div class="skills">
         <div class="skill">Business Analysis</div>
         <div class="skill">Process Mapping</div>
@@ -268,55 +272,67 @@ footer {
         <div class="skill">Python (Analytics)</div>
         <div class="skill">Excel / Google Sheets</div>
         <div class="skill">Systems Thinking</div>
-        <div class="skill">Stakeholder Communication</div>
     </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="work">
-    <h2>Selected Work</h2>
+<section class="reveal">
+    <h2>Projects</h2>
     <div class="projects">
-        <div class="card">
-            <h3>Personal Portfolio</h3>
-            <p>
-                Designed and built a responsive portfolio with semantic HTML and
-                modern CSS, emphasizing clarity, hierarchy, and professional presence.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Sales Data Analysis</h3>
-            <p>
-                Performed exploratory analysis using Excel and Google Sheets to identify
-                trends, inefficiencies, and decision-support insights.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Process Optimization Study</h3>
-            <p>
-                Mapped and improved a business workflow using structured process
-                documentation to reduce ambiguity and inefficiencies.
-            </p>
-        </div>
+        <article class="card">
+            <h3>Portfolio Website</h3>
+            <p>Designed a minimalist, responsive portfolio using HTML and CSS.</p>
+        </article>
+        <article class="card">
+            <h3>Sales Analysis</h3>
+            <p>Analyzed sales datasets to identify trends and performance gaps.</p>
+        </article>
+        <article class="card">
+            <h3>Process Improvement</h3>
+            <p>Mapped workflows and identified efficiency improvements.</p>
+        </article>
     </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-    <div class="card contact">
+<section class="reveal">
+    <article class="card">
         <h2>Contact</h2>
         <p>Email: baladevkrishnan.k@gmail.com</p>
         <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
-    </div>
+    </article>
 </section>
 
 </main>
 
 <footer>
-    © 2025 Baladev Krishnan K · Built with HTML & CSS · GitHub Pages
+    © 2025 Baladev Krishnan K · Business Analyst Portfolio
 </footer>
+
+<script>
+/* DARK MODE */
+function toggleTheme() {
+    const theme = document.documentElement.getAttribute("data-theme");
+    const newTheme = theme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+}
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+}
+
+/* SCROLL ANIMATION */
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
-
