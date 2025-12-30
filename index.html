@@ -3,221 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baladev Krishnan | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Baladev Krishnan K | Portfolio</title>
+
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --accent: #0042eb;
-            --muted: #757575;
-            --card: #f9f9f9;
-        }
-
-        [data-theme="dark"] {
-            --bg: #0a0a0a;
-            --text: #f5f5f5;
-            --accent: #4d7fff;
-            --muted: #a0a0a0;
-            --card: #151515;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.5;
-            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
         }
 
-        /* Theme Toggle */
-        .theme-switch {
-            position: fixed;
-            top: 2rem;
-            right: 8%;
-            z-index: 100;
-            cursor: pointer;
-            background: var(--accent);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+        header {
+            background-color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            padding: 0 8%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .hi-intro {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-weight: 600;
+        h1, h2 {
+            color: #111;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+        p {
+            color: #555;
         }
 
-        /* Typing Animation Cursor */
-        .typing::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            color: var(--muted);
-        }
-
-        /* Expertise Grid */
-        .section-label {
-            padding: 0 8%;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            margin: 4rem 0 2rem;
-            color: var(--muted);
-        }
-
-        .work-grid { padding: 0 8%; }
-
-        .project-card {
-            background: var(--card);
-            padding: 3rem;
-            margin-bottom: 2rem;
-            border-radius: 4px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .project-info h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .tag {
+        .skills span {
             display: inline-block;
-            font-size: 0.7rem;
-            border: 1px solid var(--muted);
-            padding: 4px 12px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 8px 14px;
+            margin: 6px;
             border-radius: 20px;
-            margin: 5px 5px 0 0;
-            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .project {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
         }
 
         footer {
-            padding: 10% 8% 5%;
-            border-top: 1px solid var(--muted);
-            margin-top: 5rem;
-        }
-
-        .contact-link {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            text-decoration: none;
-            color: var(--text);
-            font-family: 'Playfair Display', serif;
-        }
-
-        @media (max-width: 768px) {
-            .project-card { grid-template-columns: 1fr; padding: 2rem; }
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <div class="theme-switch" onclick="toggleTheme()">Toggle Mode</div>
+<header>
+    <h1>Baladev Krishnan K</h1>
+    <p>Business Analyst | Management Trainee</p>
+</header>
 
-    <section class="hero">
-        <div class="hi-intro">Hi, I'm Baladev.</div>
-        <h1>I am a <br><span class="typing" id="typewriter"></span></h1>
-        <p>Currently bridging the gap between Computer Science Engineering  and data-driven Business Analysis.</p>
-    </section>
+<section>
+    <h2>About Me</h2>
+    <p>
+        I am a Computer Science Engineering undergraduate interested in
+        Business Analysis and Management roles. I enjoy understanding problems,
+        improving processes, and working with data to support decision-making.
+    </p>
+</section>
 
-    <div class="section-label">Selected Skills</div>
-    <section class="work-grid">
-        <div class="project-card">
-            <div class="project-info">
-                <h2>Data Analytics</h2>
-                <div class="tags">
-                    <span class="tag">SQL </span>
-                    <span class="tag">Python </span>
-                    <span class="tag">Power BI [cite: 16]</span>
-                    <span class="tag">Excel [cite: 15]</span>
-                </div>
-            </div>
-            <div>
-                Proficient in extracting insights through SQL aggregations  and building interactive dashboards using Excel Pivot Tables[cite: 15].
-            </div>
-        </div>
+<section>
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>Business Analysis</span>
+        <span>Process Mapping</span>
+        <span>SQL</span>
+        <span>Python (Basics)</span>
+        <span>Excel / Google Sheets</span>
+        <span>Communication</span>
+    </div>
+</section>
 
-        <div class="project-card">
-            <div class="project-info">
-                <h2>Business Strategy</h2>
-                <div class="tags">
-                    <span class="tag">Process Analysis </span>
-                    <span class="tag">KPI Tracking [cite: 11]</span>
-                    <span class="tag">Requirements Gathering [cite: 34]</span>
-                </div>
-            </div>
-            <div>
-                Focused on identifying operational inefficiencies [cite: 33] and documenting requirements to support structured decision-making[cite: 5, 34].
-            </div>
-        </div>
-    </section>
+<section>
+    <h2>Projects</h2>
 
-    <footer>
-        <a href="mailto:baladevkrishnan.k@gmail.com" class="contact-link">Let's connect.</a>
-        <div style="margin-top: 2rem; color: var(--muted);">
-            <p>Coimbatore, India [cite: 1]</p>
-            <p><a href="https://www.linkedin.com/in/baladevkrishnan-k/" style="color: var(--accent);">LinkedIn Profile [cite: 43]</a></p>
-        </div>
-    </footer>
+    <div class="project">
+        <h3>Personal Portfolio</h3>
+        <p>
+            Created a basic responsive portfolio website using HTML and CSS
+            to showcase skills and projects.
+        </p>
+    </div>
 
-    <script>
-        // Typewriter Effect
-        const words = ["Business Analyst Aspirant.", "CS Engineering Student.", "Data Strategist.", "Problem Solver."];
-        let i = 0, j = 0, currentWord = "", isDeleting = false;
+    <div class="project">
+        <h3>Sales Data Analysis</h3>
+        <p>
+            Analyzed sales data using Excel and Google Sheets to identify trends
+            and insights.
+        </p>
+    </div>
+</section>
 
-        function type() {
-            currentWord = words[i];
-            if (isDeleting) {
-                document.getElementById("typewriter").textContent = currentWord.substring(0, j - 1);
-                j--;
-                if (j == 0) { isDeleting = false; i = (i + 1) % words.length; }
-            } else {
-                document.getElementById("typewriter").textContent = currentWord.substring(0, j + 1);
-                j++;
-                if (j == currentWord.length) { isDeleting = true; setTimeout(type, 2000); return; }
-            }
-            setTimeout(type, isDeleting ? 50 : 100);
-        }
+<section>
+    <h2>Contact</h2>
+    <p>Email: baladevkrishnan.k@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
+</section>
 
-        // Theme Toggle
-        function toggleTheme() {
-            const current = document.documentElement.getAttribute('data-theme');
-            const target = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', target);
-        }
+<footer>
+    © 2025 Baladev Krishnan K
+</footer>
 
-        // Start animation
-        document.addEventListener('DOMContentLoaded', type);
-    </script>
 </body>
 </html>
