@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Baladev Krishnan K | Portfolio</title>
+<title>Baladev Krishnan K | Strategy & Product Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,9 +19,17 @@ font-family:'Inter',sans-serif;
 }
 
 body{
-background:#f8f9fb;
-color:#222;
+background:#ffffff;
+color:#111;
 line-height:1.6;
+transition:0.3s;
+}
+
+/* DARK MODE */
+
+.dark{
+background:#0f172a;
+color:#e5e7eb;
 }
 
 /* NAVBAR */
@@ -30,71 +39,114 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 10%;
-background:white;
 border-bottom:1px solid #eee;
 position:sticky;
 top:0;
+background:white;
 }
 
-nav h2{
-font-size:18px;
+.dark nav{
+background:#0f172a;
+border-color:#1f2937;
 }
 
 nav a{
 text-decoration:none;
-color:#444;
 margin-left:20px;
 font-size:14px;
+color:inherit;
+}
+
+.toggle{
+cursor:pointer;
+border:1px solid #ddd;
+padding:6px 12px;
+border-radius:6px;
+font-size:13px;
 }
 
 /* HERO */
 
 .hero{
 max-width:900px;
-margin:80px auto;
+margin:100px auto;
 padding:0 20px;
 }
 
 .hero h1{
-font-size:40px;
+font-size:42px;
 margin-bottom:10px;
 }
 
-.hero p{
-font-size:18px;
-color:#555;
+.hero .role{
+font-weight:600;
 margin-bottom:20px;
 }
 
-.hero .tagline{
-font-weight:600;
-color:#111;
+.hero p{
+color:#555;
+max-width:600px;
+}
+
+.dark .hero p{
+color:#cbd5f5;
 }
 
 /* BUTTON */
 
 .btn{
 display:inline-block;
+margin-top:25px;
 padding:10px 18px;
-border-radius:6px;
-text-decoration:none;
 background:#111;
 color:white;
+text-decoration:none;
+border-radius:6px;
 font-size:14px;
-margin-top:10px;
+}
+
+.dark .btn{
+background:#e5e7eb;
+color:#111;
 }
 
 /* SECTIONS */
 
 section{
 max-width:900px;
-margin:70px auto;
+margin:80px auto;
 padding:0 20px;
 }
 
 h2{
-margin-bottom:20px;
 font-size:26px;
+margin-bottom:20px;
+}
+
+/* CASE STUDIES */
+
+.case-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.case{
+border:1px solid #eee;
+padding:20px;
+border-radius:8px;
+transition:0.2s;
+background:white;
+}
+
+.dark .case{
+background:#1e293b;
+border-color:#334155;
+}
+
+.case:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
 /* SKILLS */
@@ -106,85 +158,49 @@ gap:10px;
 }
 
 .skills span{
-background:white;
 border:1px solid #ddd;
 padding:8px 14px;
 border-radius:20px;
 font-size:14px;
 }
 
-/* PROJECTS */
+/* WRITING */
 
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-border:1px solid #eee;
-padding:20px;
-border-radius:8px;
-transition:0.2s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 6px 20px rgba(0,0,0,0.05);
-}
-
-.card h3{
+.article{
 margin-bottom:10px;
-}
-
-/* CONTACT */
-
-.contact p{
-margin:6px 0;
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:30px;
-margin-top:60px;
+padding:40px;
 border-top:1px solid #eee;
+margin-top:80px;
 font-size:14px;
-color:#666;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-.hero h1{
-font-size:32px;
-}
-
-nav{
-padding:20px;
-}
-
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 
 <nav>
-<h2>Baladev</h2>
+
+<strong>Baladev</strong>
 
 <div>
 <a href="#about">About</a>
-<a href="#skills">Skills</a>
+<a href="#cases">Case Studies</a>
 <a href="#projects">Projects</a>
+<a href="#thinking">Thinking</a>
 <a href="#contact">Contact</a>
+<span class="toggle" onclick="toggleDark()">Dark</span>
 </div>
+
 </nav>
 
 <!-- HERO -->
@@ -193,17 +209,17 @@ padding:20px;
 
 <h1>Baladev Krishnan K</h1>
 
-<p class="tagline">
+<div class="role">
 Aspiring Strategy & Product Analyst | 2028 Graduate
-</p>
+</div>
 
 <p>
-I am interested in roles at the intersection of strategy, product, and business analysis. 
-I enjoy understanding problems from a user and business perspective, breaking them down 
-logically, and using data and structured thinking to support better decisions.
+I enjoy understanding problems from both a user and business perspective,
+breaking them down logically, and using structured analysis and data to
+support better decisions.
 </p>
 
-<a class="btn" href="#projects">View Projects</a>
+<a class="btn" href="#cases">View Case Studies</a>
 
 </div>
 
@@ -211,31 +227,51 @@ logically, and using data and structured thinking to support better decisions.
 
 <section id="about">
 
-<h2>About Me</h2>
+<h2>About</h2>
 
 <p>
-Currently building skills and hands-on projects in product analytics, business analysis,
-and strategy case studies. My goal is to grow into strategy-focused roles where I can
-combine analytical thinking, structured problem solving, and business insight.
+I am currently building skills in product analytics, business analysis,
+and strategy frameworks.
+
+My interests lie at the intersection of product, strategy, and data —
+understanding user behavior, identifying business opportunities,
+and designing solutions that create meaningful impact.
 </p>
 
 </section>
 
-<!-- SKILLS -->
+<!-- CASE STUDIES -->
 
-<section id="skills">
+<section id="cases">
 
-<h2>Skills</h2>
+<h2>Case Studies</h2>
 
-<div class="skills">
-<span>Business Analysis</span>
-<span>Product Thinking</span>
-<span>Strategy Analysis</span>
-<span>SQL</span>
-<span>Python (Basics)</span>
-<span>Excel / Google Sheets</span>
-<span>Process Mapping</span>
-<span>Data Analysis</span>
+<div class="case-grid">
+
+<div class="case">
+<h3>Food Delivery Checkout Optimization</h3>
+<p>
+Analyzed potential user drop-off points in a checkout flow
+and proposed product improvements to increase conversion.
+</p>
+</div>
+
+<div class="case">
+<h3>EV Charging Network Expansion</h3>
+<p>
+Strategy analysis on how EV charging infrastructure startups
+can expand into underserved markets.
+</p>
+</div>
+
+<div class="case">
+<h3>Product Metrics Breakdown</h3>
+<p>
+Explored product metrics frameworks and how teams measure
+user engagement and growth.
+</p>
+</div>
+
 </div>
 
 </section>
@@ -246,29 +282,21 @@ combine analytical thinking, structured problem solving, and business insight.
 
 <h2>Projects</h2>
 
-<div class="projects">
+<div class="case-grid">
 
-<div class="card">
-<h3>Portfolio Website</h3>
-<p>
-Built a responsive personal portfolio using HTML and CSS to showcase skills,
-projects, and professional interests.
-</p>
-</div>
-
-<div class="card">
+<div class="case">
 <h3>Sales Data Analysis</h3>
 <p>
-Analyzed sales data using Excel and Google Sheets to identify trends,
-patterns, and business insights.
+Analyzed sales datasets using Excel and Google Sheets
+to identify patterns and business insights.
 </p>
 </div>
 
-<div class="card">
-<h3>Strategy Case Study</h3>
+<div class="case">
+<h3>Personal Portfolio</h3>
 <p>
-Worked on structured business case analysis focusing on market positioning,
-problem breakdown, and recommendation frameworks.
+Designed and built a responsive portfolio website using
+HTML and CSS hosted on GitHub Pages.
 </p>
 </div>
 
@@ -276,15 +304,45 @@ problem breakdown, and recommendation frameworks.
 
 </section>
 
+<!-- THINKING -->
+
+<section id="thinking">
+
+<h2>Product Thinking</h2>
+
+<div class="article">• Why Notion Became a Popular Product</div>
+<div class="article">• How Uber’s Pricing Strategy Works</div>
+<div class="article">• What Makes Spotify’s Recommendation System Powerful</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section>
+
+<h2>Skills</h2>
+
+<div class="skills">
+<span>Strategy Analysis</span>
+<span>Business Analysis</span>
+<span>Product Thinking</span>
+<span>SQL</span>
+<span>Excel</span>
+<span>Python (Basics)</span>
+<span>User Journey Mapping</span>
+</div>
+
+</section>
+
 <!-- CONTACT -->
 
-<section id="contact" class="contact">
+<section id="contact">
 
 <h2>Contact</h2>
 
 <p>Email: baladevkrishnan.k@gmail.com</p>
 <p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
-<p>GitHub: github.com/baladev-krishnan-k</p>
+<p>GitHub: github.com/yourusername</p>
 
 </section>
 
@@ -293,6 +351,14 @@ problem breakdown, and recommendation frameworks.
 © 2026 Baladev Krishnan K
 
 </footer>
+
+<script>
+
+function toggleDark(){
+document.body.classList.toggle("dark")
+}
+
+</script>
 
 </body>
 </html>
