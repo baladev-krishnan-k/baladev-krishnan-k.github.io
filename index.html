@@ -1,354 +1,154 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Baladev Krishnan K | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#ffffff;
-color:#111;
-line-height:1.6;
-transition:0.3s;
-}
-
-.dark{
-background:#0f172a;
-color:#e5e7eb;
-}
-
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:22px 10%;
-position:sticky;
-top:0;
-background:white;
-border-bottom:1px solid #eee;
-z-index:100;
-}
-
-.dark nav{
-background:#0f172a;
-border-color:#1f2937;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-font-size:14px;
-color:inherit;
-}
-
-.toggle{
-cursor:pointer;
-border:1px solid #ddd;
-padding:6px 12px;
-border-radius:6px;
-font-size:13px;
-}
-
-/* HERO */
-
-.hero{
-max-width:900px;
-margin:120px auto;
-padding:0 20px;
-animation:fadeUp 1s ease;
-}
-
-.hero h1{
-font-size:46px;
-margin-bottom:10px;
-}
-
-.hero .tag{
-font-weight:600;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:600px;
-color:#555;
-}
-
-.dark .hero p{
-color:#cbd5f5;
-}
-
-/* BUTTON */
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:10px 18px;
-background:#111;
-color:white;
-text-decoration:none;
-border-radius:6px;
-font-size:14px;
-transition:0.2s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-}
-
-.dark .btn{
-background:#e5e7eb;
-color:#111;
-}
-
-/* SECTIONS */
-
-section{
-max-width:900px;
-margin:90px auto;
-padding:0 20px;
-animation:fadeUp 1s ease;
-}
-
-h2{
-font-size:26px;
-margin-bottom:20px;
-}
-
-/* SKILLS */
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-.skills span{
-border:1px solid #ddd;
-padding:8px 14px;
-border-radius:20px;
-font-size:14px;
-}
-
-/* PROJECTS */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.card{
-border:1px solid #eee;
-padding:22px;
-border-radius:10px;
-transition:0.25s;
-background:white;
-}
-
-.dark .card{
-background:#1e293b;
-border-color:#334155;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-margin-top:80px;
-padding:40px;
-border-top:1px solid #eee;
-font-size:14px;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-.hero h1{
-font-size:34px;
-}
-
-nav{
-padding:20px;
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baladev Krishnan K - Portfolio</title>
+    <style>
+        /* Minimalist, typography-focused styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background-color: #fafafa;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+        }
+        p, li {
+            font-size: 1rem;
+            color: #444;
+        }
+        a {
+            color: #0055ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .project {
+            margin-bottom: 2rem;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .project-date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAV -->
+    <header>
+        <h1>Baladev Krishnan K</h1>
+        <div class="subtitle">
+            Computer Science Student & Data Analyst • Tamilnadu, India <br>
+            <a href="mailto:baladevkrishnan.k@gmail.com">Email</a> • 
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        </div>
+    </header>
 
-<nav>
+    <section>
+        <h2>Overview</h2>
+        <p>I am a B.E. Computer Science student at Bannari Amman Institute of Technology with a focus on translating raw data into actionable business strategy. My work bridges the gap between technical data processing and product-oriented thinking.</p>
+    </section>
 
-<strong>Baladev</strong>
+    <section>
+        <h2>Selected Projects</h2>
+        
+        <div class="project">
+            <div class="project-header">
+                <span class="project-title">Electricity Consumption Analysis</span>
+                <span class="project-date">Nov 2025 – Jan 2026</span>
+            </div>
+            <ul>
+                <li><strong>Tools:</strong> Python (Pandas, Matplotlib), Excel</li>
+                <li>Cleaned and processed raw energy datasets to improve data quality for structured analysis.</li>
+                <li>Identified peak consumption hours and generated visualizations to support energy efficiency planning.</li>
+            </ul>
+        </div>
 
-<div>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-<span class="toggle" onclick="toggleDark()">Dark</span>
-</div>
+        <div class="project">
+            <div class="project-header">
+                <span class="project-title">Sales Data Analysis</span>
+                <span class="project-date">July 2025 – Sept 2025</span>
+            </div>
+            <ul>
+                <li><strong>Tools:</strong> Excel / Google Sheets</li>
+                <li>Analyzed 1,000+ sales records using pivot tables and filtering to identify revenue patterns.</li>
+                <li>Identified top-performing products and seasonal demand trends to generate business insights.</li>
+            </ul>
+        </div>
+    </section>
 
-</nav>
+    <section>
+        <h2>Core Competencies</h2>
+        <div class="skills-grid">
+            <div>
+                <p><strong>Technical Stack</strong></p>
+                <ul>
+                    <li>C, C++, Java, Python</li>
+                    <li>Pandas, Excel, Google Sheets</li>
+                    <li>HTML, CSS, GitHub</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Skills & Interests</strong></p>
+                <ul>
+                    <li>Data & Business Analysis</li>
+                    <li>Product Thinking</li>
+                    <li>Market Trends & Innovation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-
-<div class="hero">
-
-<h1>Baladev Krishnan K</h1>
-
-<div class="tag">
-Aspiring Strategy & Product Analyst | 2028 Graduate
-</div>
-
-<p>
-Interested in the intersection of strategy, product, and data.
-I enjoy breaking down complex business problems and using
-structured thinking to support better decisions.
-</p>
-
-<a class="btn" href="#projects">View Projects</a>
-
-</div>
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h2>About</h2>
-
-<p>
-I am building skills in product analytics, business analysis,
-and strategy frameworks. My focus is on understanding user
-behavior, identifying business opportunities, and designing
-solutions that create meaningful impact.
-</p>
-
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Sales Data Analysis</h3>
-<p>
-Analyzed sales datasets using Excel and Google Sheets
-to identify trends and business insights.
-</p>
-</div>
-
-<div class="card">
-<h3>Portfolio Website</h3>
-<p>
-Built a responsive portfolio website using HTML and CSS
-and deployed it using GitHub Pages.
-</p>
-</div>
-
-<div class="card">
-<h3>C++ Algorithm Practice</h3>
-<p>
-Solved algorithm problems in C++ to strengthen
-logical and analytical thinking.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<h2>Skills</h2>
-
-<div class="skills">
-
-<span>C</span>
-<span>Java</span>
-<span>C++</span>
-<span>Excel</span>
-<span>SQL</span>
-<span>Python (Basics)</span>
-<span>Business Analysis</span>
-<span>Product Thinking</span>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2>Contact</h2>
-
-<p>Email: baladevkrishnan.k@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/baladevkrishnan-k</p>
-<p>GitHub: github.com/yourusername</p>
-
-</section>
-
-<footer>
-
-© 2026 Baladev Krishnan K
-
-</footer>
-
-<script>
-
-function toggleDark(){
-document.body.classList.toggle("dark")
-}
-
-</script>
+    <section>
+        <h2>Certifications</h2>
+        <ul>
+            <li>Business Analysis & Process Management (Coursera)</li>
+            <li>Cloud 101 (AWS Training and Certification)</li>
+            <li>Business Analysis Basics (Simplilearn)</li>
+            <li>Introduction to Cybersecurity (Cisco Networking Academy)</li>
+            <li>Practical Help Desk (TCM Security)</li>
+        </ul>
+    </section>
 
 </body>
 </html>
-```
