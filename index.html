@@ -3,152 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baladev Krishnan K - Portfolio</title>
+    <title>Baladev Krishnan K | Professional Portfolio</title>
     <style>
-        /* Minimalist, typography-focused styling */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            background-color: #fafafa;
+        /* Professional, structured styling */
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #334155;
+            --accent-color: #2563eb;
+            --bg-color: #f8fafc;
+            --border-color: #e2e8f0;
         }
+
+        body {
+            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--secondary-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 4rem auto;
+            background: #ffffff;
+            padding: 3rem 4rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
         h1 {
-            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-size: 2.25rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin: 0 0 0.5rem 0;
             letter-spacing: -0.5px;
         }
-        h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-top: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.5rem;
+
+        .contact-info {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
         }
-        p, li {
-            font-size: 1rem;
-            color: #444;
-        }
-        a {
-            color: #0055ff;
+
+        .contact-info a {
+            color: var(--accent-color);
             text-decoration: none;
+            font-weight: 500;
+            margin: 0 0.5rem;
         }
-        a:hover {
+
+        .contact-info a:hover {
             text-decoration: underline;
         }
-        .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
         }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            margin-left: 1rem;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
         .project {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
+
         .project-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: center;
             margin-bottom: 0.5rem;
         }
+
         .project-title {
             font-weight: 600;
             font-size: 1.1rem;
+            color: var(--primary-color);
         }
+
         .project-date {
             font-size: 0.9rem;
-            color: #777;
+            color: #64748b;
+            font-weight: 500;
         }
+
         ul {
-            padding-left: 1.2rem;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
         }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 2rem;
+        }
+
+        .skills-category {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Subtle tag styling for tech stack */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tech-tags li {
+            background-color: #f1f5f9;
+            color: var(--secondary-color);
+            padding: 0.2rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Baladev Krishnan K</h1>
-        <div class="subtitle">
-            Computer Science Student & Data Analyst • Tamilnadu, India <br>
-            <a href="mailto:baladevkrishnan.k@gmail.com">Email</a> • 
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        </div>
-    </header>
-
-    <section>
-        <h2>Overview</h2>
-        <p>I am a B.E. Computer Science student at Bannari Amman Institute of Technology with a focus on translating raw data into actionable business strategy. My work bridges the gap between technical data processing and product-oriented thinking.</p>
-    </section>
-
-    <section>
-        <h2>Selected Projects</h2>
-        
-        <div class="project">
-            <div class="project-header">
-                <span class="project-title">Electricity Consumption Analysis</span>
-                <span class="project-date">Nov 2025 – Jan 2026</span>
+    <div class="container">
+        <header>
+            <h1>Baladev Krishnan K</h1>
+            <div class="contact-info">
+                Computer Science Student & Data Analyst • Tamilnadu, India<br>
+                <a href="mailto:baladevkrishnan.k@gmail.com">baladevkrishnan.k@gmail.com</a> | 
+                <a href="https://github.com/baladev-krishnan-k" target="_blank">GitHub</a> | 
+                <a href="#" target="_blank">Portfolio</a>
             </div>
-            <ul>
-                <li><strong>Tools:</strong> Python (Pandas, Matplotlib), Excel</li>
-                <li>Cleaned and processed raw energy datasets to improve data quality for structured analysis.</li>
-                <li>Identified peak consumption hours and generated visualizations to support energy efficiency planning.</li>
-            </ul>
-        </div>
+        </header>
 
-        <div class="project">
-            <div class="project-header">
-                <span class="project-title">Sales Data Analysis</span>
-                <span class="project-date">July 2025 – Sept 2025</span>
-            </div>
-            <ul>
-                <li><strong>Tools:</strong> Excel / Google Sheets</li>
-                <li>Analyzed 1,000+ sales records using pivot tables and filtering to identify revenue patterns.</li>
-                <li>Identified top-performing products and seasonal demand trends to generate business insights.</li>
-            </ul>
-        </div>
-    </section>
+        <section>
+            <h2>Education & Overview</h2>
+            <p><strong>B.E., Computer Science Engineering</strong> — Bannari Amman Institute of Technology (Expected May 2028)</p>
+            <p><strong>CGPA:</strong> 8.17</p>
+            <p>I specialize in translating raw data into actionable business strategy. My work bridges the gap between technical data processing and product-oriented thinking, utilizing modern analytics tools to drive efficiency and revenue insights.</p>
+        </section>
 
-    <section>
-        <h2>Core Competencies</h2>
-        <div class="skills-grid">
-            <div>
-                <p><strong>Technical Stack</strong></p>
+        <section>
+            <h2>Professional Projects</h2>
+            
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">Electricity Consumption Analysis</span>
+                    <span class="project-date">Nov 2025 – Jan 2026</span>
+                </div>
                 <ul>
-                    <li>C, C++, Java, Python</li>
-                    <li>Pandas, Excel, Google Sheets</li>
-                    <li>HTML, CSS, GitHub</li>
+                    <li>Cleaned and processed raw energy datasets using Python (Pandas) to improve data quality for structured analysis.</li>
+                    <li>Created visualizations using Matplotlib and spreadsheet charts to present daily and monthly electricity usage patterns.</li>
+                    <li>Identified peak consumption hours and generated insights to support better energy management and efficiency planning.</li>
                 </ul>
             </div>
-            <div>
-                <p><strong>Skills & Interests</strong></p>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">Sales Data Analysis</span>
+                    <span class="project-date">July 2025 – Sept 2025</span>
+                </div>
                 <ul>
-                    <li>Data & Business Analysis</li>
-                    <li>Product Thinking</li>
-                    <li>Market Trends & Innovation</li>
+                    <li>Analyzed 1000+ sales records using Excel to identify revenue trends and product performance insights.</li>
+                    <li>Used pivot tables, charts, and filtering to generate business insights.</li>
+                    <li>Identified top-performing products and seasonal demand patterns to optimize strategy.</li>
                 </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>Business Analysis & Process Management (Coursera)</li>
-            <li>Cloud 101 (AWS Training and Certification)</li>
-            <li>Business Analysis Basics (Simplilearn)</li>
-            <li>Introduction to Cybersecurity (Cisco Networking Academy)</li>
-            <li>Practical Help Desk (TCM Security)</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div>
+                    <div class="skills-category">Technologies & Tools</div>
+                    <ul class="tech-tags">
+                        <li>Python</li>
+                        <li>Pandas</li>
+                        <li>C / C++</li>
+                        <li>Java</li>
+                        <li>Excel</li>
+                        <li>Google Sheets</li>
+                        <li>HTML / CSS</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="skills-category">Professional Skills</div>
+                    <ul>
+                        <li>Data & Business Analysis</li>
+                        <li>Data Visualization</li>
+                        <li>Product & Analytical Thinking</li>
+                        <li>Problem Solving & Strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <ul>
+                <li><strong>Business Analysis and Process Management</strong> — Coursera</li>
+                <li><strong>Cloud 101</strong> — AWS Training and Certification</li>
+                <li><strong>Business Analysis Basics</strong> — Simplilearn</li>
+                <li><strong>Introduction to Cybersecurity</strong> — Cisco Networking Academy</li>
+                <li><strong>Practical Help Desk</strong> — TCM Security</li>
+            </ul>
+        </section>
+    </div>
 
 </body>
 </html>
