@@ -3,91 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baladev Krishnan K | Professional Portfolio</title>
+    <title>Baladev Krishnan K | Data Analyst & CS Student</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Professional, structured styling */
         :root {
             --primary-color: #0f172a;
-            --secondary-color: #334155;
+            --secondary-color: #475569;
             --accent-color: #2563eb;
-            --bg-color: #f8fafc;
+            --bg-color: #f1f5f9;
             --border-color: #e2e8f0;
             --card-bg: #ffffff;
-            --tag-bg: #f1f5f9;
+            --tag-bg: #e2e8f0;
+            --tag-text: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             color: var(--secondary-color);
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 800px;
-            margin: 4rem auto;
+            max-width: 850px;
+            margin: 3rem auto;
             background: var(--card-bg);
-            padding: 3rem 4rem;
+            padding: 3.5rem 4rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease;
-        }
-
-        /* Mobile responsiveness for the container */
-        @media (max-width: 768px) {
-            .container {
-                margin: 2rem 1rem;
-                padding: 2rem;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1.5rem !important;
-            }
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-top: 6px solid var(--accent-color); /* Adds a professional brand accent */
         }
 
         header {
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
             text-align: center;
+            margin-bottom: 2.5rem;
         }
 
         h1 {
             color: var(--primary-color);
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin: 0 0 0.5rem 0;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
 
         .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.25rem;
             font-size: 0.95rem;
-            color: var(--secondary-color);
         }
 
-        .contact-info a {
-            color: var(--accent-color);
+        .contact-info a, .contact-info span {
+            color: var(--secondary-color);
             text-decoration: none;
-            font-weight: 500;
-            margin: 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
             transition: color 0.2s ease;
         }
 
         .contact-info a:hover {
-            color: #1d4ed8;
-            text-decoration: underline;
+            color: var(--accent-color);
+        }
+
+        .contact-info svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
         h2 {
             color: var(--primary-color);
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            margin: 2.5rem 0 1.25rem 0;
             display: flex;
             align-items: center;
         }
@@ -100,27 +111,39 @@
             background-color: var(--border-color);
         }
 
+        .overview {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            background: #f8fafc;
+            padding: 1rem 1rem 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
         .project {
             margin-bottom: 1.5rem;
             padding: 1.5rem;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            transition: all 0.3s ease;
+            background-color: #fafaf9;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* Hover effect for project cards */
         .project:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            background-color: var(--card-bg);
             border-color: #cbd5e1;
         }
 
         .project-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
             margin-bottom: 0.75rem;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .project-title {
@@ -130,22 +153,21 @@
         }
 
         .project-date {
-            font-size: 0.9rem;
-            color: #64748b;
+            font-size: 0.85rem;
+            color: var(--secondary-color);
             font-weight: 500;
-            background: #f8fafc;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            background: var(--tag-bg);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
         }
 
         ul {
-            padding-left: 1.5rem;
-            margin-top: 0.5rem;
-            margin-bottom: 0;
+            padding-left: 1.25rem;
+            margin: 0.5rem 0 0 0;
         }
 
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .skills-grid {
@@ -161,7 +183,6 @@
             font-size: 1.05rem;
         }
 
-        /* Subtle tag styling for tech stack */
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
@@ -172,19 +193,64 @@
 
         .tech-tags li {
             background-color: var(--tag-bg);
-            color: var(--secondary-color);
-            padding: 0.3rem 0.85rem;
-            border-radius: 999px;
+            color: var(--tag-text);
+            padding: 0.35rem 0.85rem;
+            border-radius: 6px; /* Squarer tags for a tech feel */
             font-size: 0.85rem;
             font-weight: 500;
             margin: 0;
-            transition: background-color 0.2s ease, color 0.2s ease;
-            cursor: default;
+            transition: all 0.2s ease;
         }
 
         .tech-tags li:hover {
             background-color: var(--accent-color);
             color: #ffffff;
+        }
+
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cert-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                padding: 2rem 1.5rem;
+                border-radius: 0;
+                border-top: 4px solid var(--accent-color);
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -193,18 +259,32 @@
     <div class="container">
         <header>
             <h1>Baladev Krishnan K</h1>
+            <div class="subtitle">Computer Science Student & Data Analyst</div>
+            
             <div class="contact-info">
-                Computer Science Student & Data Analyst • Tamilnadu, India<br>
-                <a href="mailto:baladevkrishnan.k@gmail.com">baladevkrishnan.k@gmail.com</a> | 
-                <a href="https://github.com/baladev-krishnan-k" target="_blank">GitHub</a> | 
-                <a href="#" target="_blank">Portfolio</a>
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Tamil Nadu, India
+                </span>
+                <a href="mailto:baladevkrishnan.k@gmail.com">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    baladevkrishnan.k@gmail.com
+                </a>
+                <a href="https://github.com/baladev-krishnan-k" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    GitHub
+                </a>
+                <a href="#" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
             </div>
         </header>
 
         <section>
             <h2>Education & Overview</h2>
-            <p><strong>B.E., Computer Science Engineering</strong> — Bannari Amman Institute of Technology (Expected May 2028)</p>
-            <p>I specialize in translating raw data into actionable business strategy. My work bridges the gap between technical data processing and product-oriented thinking, utilizing modern analytics tools to drive efficiency and revenue insights.</p>
+            <p><strong>B.E., Computer Science Engineering</strong> — Bannari Amman Institute of Technology <em>(Expected May 2028)</em></p>
+            <p class="overview">I specialize in translating raw data into actionable business strategy. My work bridges the gap between technical data processing and product-oriented thinking, utilizing modern analytics tools to drive efficiency and revenue insights.</p>
         </section>
 
         <section>
@@ -216,8 +296,8 @@
                     <span class="project-date">Nov 2025 – Jan 2026</span>
                 </div>
                 <ul>
-                    <li>Cleaned and processed raw energy datasets using Python (Pandas) to improve data quality for structured analysis.</li>
-                    <li>Created visualizations using Matplotlib and spreadsheet charts to present daily and monthly electricity usage patterns.</li>
+                    <li>Cleaned and processed raw energy datasets using <strong>Python (Pandas)</strong> to improve data quality for structured analysis.</li>
+                    <li>Created visualizations using <strong>Matplotlib</strong> and spreadsheet charts to present daily and monthly electricity usage patterns.</li>
                     <li>Identified peak consumption hours and generated insights to support better energy management and efficiency planning.</li>
                 </ul>
             </div>
@@ -228,9 +308,9 @@
                     <span class="project-date">July 2025 – Sept 2025</span>
                 </div>
                 <ul>
-                    <li>Analyzed 1000+ sales records using Excel to identify revenue trends and product performance insights.</li>
-                    <li>Used pivot tables, charts, and filtering to generate business insights.</li>
-                    <li>Identified top-performing products and seasonal demand patterns to optimize strategy.</li>
+                    <li>Analyzed 1000+ sales records using <strong>Excel</strong> to identify revenue trends and product performance insights.</li>
+                    <li>Designed pivot tables, charts, and filtering models to generate actionable business intelligence.</li>
+                    <li>Identified top-performing products and seasonal demand patterns to optimize sales strategy.</li>
                 </ul>
             </div>
         </section>
@@ -253,7 +333,7 @@
                 </div>
                 <div>
                     <div class="skills-category">Professional Skills</div>
-                    <ul>
+                    <ul class="cert-list">
                         <li>Data & Business Analysis</li>
                         <li>Data Visualization</li>
                         <li>Product & Analytical Thinking</li>
@@ -265,7 +345,7 @@
 
         <section>
             <h2>Certifications</h2>
-            <ul>
+            <ul class="cert-list">
                 <li><strong>Business Analysis and Process Management</strong> — Coursera</li>
                 <li><strong>Cloud 101</strong> — AWS Training and Certification</li>
                 <li><strong>Business Analysis Basics</strong> — Simplilearn</li>
@@ -273,6 +353,10 @@
                 <li><strong>Practical Help Desk</strong> — TCM Security</li>
             </ul>
         </section>
+
+        <footer>
+            &copy; 2026 Baladev Krishnan K. All rights reserved.
+        </footer>
     </div>
 
 </body>
