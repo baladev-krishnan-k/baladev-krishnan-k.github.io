@@ -12,6 +12,8 @@
             --accent-color: #2563eb;
             --bg-color: #f8fafc;
             --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --tag-bg: #f1f5f9;
         }
 
         body {
@@ -26,10 +28,23 @@
         .container {
             max-width: 800px;
             margin: 4rem auto;
-            background: #ffffff;
+            background: var(--card-bg);
             padding: 3rem 4rem;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+
+        /* Mobile responsiveness for the container */
+        @media (max-width: 768px) {
+            .container {
+                margin: 2rem 1rem;
+                padding: 2rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
         }
 
         header {
@@ -57,9 +72,11 @@
             text-decoration: none;
             font-weight: 500;
             margin: 0 0.5rem;
+            transition: color 0.2s ease;
         }
 
         .contact-info a:hover {
+            color: #1d4ed8;
             text-decoration: underline;
         }
 
@@ -70,7 +87,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-top: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
         }
@@ -85,18 +102,30 @@
 
         .project {
             margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect for project cards */
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #cbd5e1;
         }
 
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
         }
 
         .project-title {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--primary-color);
         }
 
@@ -104,11 +133,15 @@
             font-size: 0.9rem;
             color: #64748b;
             font-weight: 500;
+            background: #f8fafc;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
         }
 
         ul {
             padding-left: 1.5rem;
             margin-top: 0.5rem;
+            margin-bottom: 0;
         }
 
         li {
@@ -124,7 +157,8 @@
         .skills-category {
             font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
         }
 
         /* Subtle tag styling for tech stack */
@@ -137,13 +171,20 @@
         }
 
         .tech-tags li {
-            background-color: #f1f5f9;
+            background-color: var(--tag-bg);
             color: var(--secondary-color);
-            padding: 0.2rem 0.75rem;
+            padding: 0.3rem 0.85rem;
             border-radius: 999px;
             font-size: 0.85rem;
             font-weight: 500;
             margin: 0;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            cursor: default;
+        }
+
+        .tech-tags li:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -163,7 +204,6 @@
         <section>
             <h2>Education & Overview</h2>
             <p><strong>B.E., Computer Science Engineering</strong> — Bannari Amman Institute of Technology (Expected May 2028)</p>
-            <p><strong>CGPA:</strong> 8.17</p>
             <p>I specialize in translating raw data into actionable business strategy. My work bridges the gap between technical data processing and product-oriented thinking, utilizing modern analytics tools to drive efficiency and revenue insights.</p>
         </section>
 
